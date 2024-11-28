@@ -1,15 +1,13 @@
-import localFont from "next/font/local";
+import { Inter, Satisfy } from 'next/font/google'
 import "./globals.css";
+import NavBar from '@/components/ui/NavBar';
+import Footer from '@/components/ui/Footer';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const inter = Inter({ subsets: ['latin'] });
+const satisfy = Satisfy({
+  weight: '400',  // or specify other weights you need
+  subsets: ['latin'],  // Make sure to use 'bengali' subset
+  variable: '--font-satisfy',
 });
 
 export const metadata = {
@@ -20,10 +18,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${satisfy.variable} antialiased`}>
+        <NavBar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

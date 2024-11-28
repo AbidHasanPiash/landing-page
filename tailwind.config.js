@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        satisfy: ['var(--font-satisfy)'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
