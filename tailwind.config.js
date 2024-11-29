@@ -11,8 +11,24 @@ module.exports = {
         satisfy: ['var(--font-satisfy)'],
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "#f9fafb", // Light gray
+        foreground: "#111827", // Dark gray (for text)
+        primary: {
+          DEFAULT: "#092c2f", // Primary brand color
+          hover: "#1e40af",   // Darker shade for hover
+        },
+        secondary: {
+          DEFAULT: "#d7f427", // Secondary accent
+          hover: "#7e22ce",   // Darker shade
+        },
+        muted: "#edeca2", // Muted gray for subtle backgrounds
+        highlight: "#facc15", // Bright yellow for highlights
+        error: "#ef4444", // Red for error states
+        success: "#22c55e", // Green for success states
+        info: "#3b82f6", // Blue for informational elements
+      },
+      maxWidth: {
+        '8xl': '91rem',
       },
     },
   },
