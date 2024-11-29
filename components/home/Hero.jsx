@@ -1,9 +1,12 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
 import images from '@/configs/img.config'
 import Button from '@/components/common/Button'
 import TypingAnimation from '@/components/common/TypingAnimation';
 import { BsInfoLg } from "react-icons/bs";
+import { motion } from 'framer-motion';
+import transitions from '@/animations/transitions';
 
 export default function Hero() {
     return (
@@ -39,41 +42,66 @@ export default function Hero() {
                         {/* Sphere Image */}
                         <img src={images.hero.sphere} alt="sphere" className="relative z-0" />
 
-                        {/* Overlaying Images */}
-                        <img
+                        {/* Overlaying Images with Animations */}
+                        <motion.img
                             src={images.hero.talent_Acquisition}
                             alt="talent_Acquisition"
                             className="absolute top-12 left-2 h-10"
+                            variants={transitions.FadeInWithBlur}
+                            initial="initial"
+                            animate="animate"
+                            transition={{
+                                opacity: { delay: 5 },    // Add delay for opacity transition
+                                filter: { delay: 5 },     // Add delay for filter (blur) transition
+                            }}
                         />
-                        <img
+                        <motion.img
                             src={images.hero.people}
                             alt="people"
                             className="absolute top-16 right-4 h-24"
+                            variants={transitions.FadeInFromRight}
+                            initial="initial"
+                            animate="animate"
                         />
-                        <img
+                        <motion.img
                             src={images.hero.card_1}
                             alt="card_1"
                             className="absolute lg:top-24 xl:top-32 left-8 w-48"
+                            variants={transitions.FadeInFromBottom}
+                            initial="initial"
+                            animate="animate"
                         />
-                        <img
+                        <motion.img
                             src={images.hero.card_2}
                             alt="card_2"
                             className="absolute lg:bottom-0 xl:bottom-16 lg:left-48 xl:left-64 w-48"
+                            variants={transitions.FadeInFromBottom}
+                            initial="initial"
+                            animate="animate"
                         />
-                        <img
+                        <motion.img
                             src={images.hero.virtual_hr}
                             alt="virtual_hr"
                             className="absolute top-1/2 right-4 h-10"
+                            variants={transitions.FadeInWithBlur}
+                            initial="initial"
+                            animate="animate"
                         />
-                        <img
+                        <motion.img
                             src={images.hero.compliance}
                             alt="compliance"
                             className="absolute lg:top-44 xl:top-60 lg:left-44 xl:left-52 h-10"
+                            variants={transitions.FadeInWithBlur}
+                            initial="initial"
+                            animate="animate"
                         />
-                        <img
+                        <motion.img
                             src={images.hero.virtual_team_management}
                             alt="virtual_team_management"
                             className="absolute lg:bottom-24 xl:bottom-28 left-0 h-10"
+                            variants={transitions.FadeInWithBlur}
+                            initial="initial"
+                            animate="animate"
                         />
                     </div>
                 </div>

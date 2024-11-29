@@ -1,7 +1,7 @@
-export const FadeInFromLeft = {
+const FadeInFromLeft = {
     initial: {
         opacity: 0,
-        x: -100,
+        x: -50,
     },
     animate: {
         opacity: 1,
@@ -9,15 +9,15 @@ export const FadeInFromLeft = {
         transition: {
             type: 'easeIn',
             duration: 0.5,
-            delay: 0.2,
+            // delay: 0.2,
         },
     }
 }
 
-export const FadeInFromRight = {
+const FadeInFromRight = {
     initial: {
         opacity: 0,
-        x: 100,
+        x: 50,
     },
     animate: {
         opacity: 1,
@@ -25,15 +25,15 @@ export const FadeInFromRight = {
         transition: {
             type: 'easeIn',
             duration: 0.5,
-            delay: 0.2,
+            // delay: 0.2,
         },
     }
 }
 
-export const FadeInFromTop = {
+const FadeInFromTop = {
     initial: {
         opacity: 0,
-        y: -100,
+        y: -50,
     },
     animate: {
         opacity: 1,
@@ -41,15 +41,15 @@ export const FadeInFromTop = {
         transition: {
             type: 'easeIn',
             duration: 0.5,
-            delay: 0.2,
+            // delay: 0.2,
         },
     }
 }
 
-export const FadeInFromBottom = {
+const FadeInFromBottom = {
     initial: {
         opacity: 0,
-        y: 100,
+        y: 50,
     },
     animate: {
         opacity: 1,
@@ -57,12 +57,12 @@ export const FadeInFromBottom = {
         transition: {
             type: 'easeIn',
             duration: 0.5,
-            delay: 0.2,
+            // delay: 0.2,
         },
     }
 }
 
-export const ScaleIn = {
+const ScaleIn = {
     initial: {
         opacity: 0,
         scale: 0.8,
@@ -73,12 +73,12 @@ export const ScaleIn = {
         transition: {
             type: 'spring',
             duration: 0.5,
-            delay: 0.2,
+            // delay: 0.2,
         },
     }
 }
 
-export const RotateIn = {
+const RotateIn = {
     initial: {
         opacity: 0,
         rotate: -90,
@@ -89,12 +89,12 @@ export const RotateIn = {
         transition: {
             type: 'easeInOut',
             duration: 0.5,
-            delay: 0.2,
+            // delay: 0.2,
         },
     }
 }
 
-export const ZoomIn = {
+const ZoomIn = {
     initial: {
         opacity: 0,
         scale: 1.5,
@@ -105,12 +105,12 @@ export const ZoomIn = {
         transition: {
             type: 'easeOut',
             duration: 0.5,
-            delay: 0.2,
+            // delay: 0.2,
         },
     }
 }
 
-export const ZoomOut = {
+const ZoomOut = {
     initial: {
         opacity: 0,
         scale: 0.5,
@@ -121,12 +121,12 @@ export const ZoomOut = {
         transition: {
             type: 'easeOut',
             duration: 0.5,
-            delay: 0.2,
+            // delay: 0.2,
         },
     }
 }
 
-export const BounceIn = {
+const BounceIn = {
     initial: {
         opacity: 0,
         y: -100,
@@ -143,7 +143,7 @@ export const BounceIn = {
     }
 }
 
-export const StaggerContainer = {
+const StaggerContainer = {
     animate: {
         transition: {
             staggerChildren: 0.3
@@ -151,23 +151,23 @@ export const StaggerContainer = {
     }
 }
 
-export const SlideOutLeft = {
+const SlideOutLeft = {
     initial: {
         opacity: 1,
         x: 0,
     },
     animate: {
         opacity: 0,
-        x: -100,
+        x: -50,
         transition: {
             type: 'easeIn',
             duration: 0.5,
-            delay: 0.2,
+            // delay: 0.2,
         },
     }
 }
 
-export const FlipIn = {
+const FlipIn = {
     initial: {
         opacity: 0,
         rotateY: -90,
@@ -178,7 +178,84 @@ export const FlipIn = {
         transition: {
             type: 'easeOut',
             duration: 0.5,
-            delay: 0.2,
+            // delay: 0.2,
         },
     }
 }
+
+const FadeIn = {
+    initial: {
+        opacity: 0,
+    },
+    animate: {
+        opacity: 1,
+        transition: {
+            type: 'easeIn',
+            duration: 1.5,
+        },
+    }
+}
+
+const FadeOut = {
+    initial: {
+        opacity: 1,
+    },
+    animate: {
+        opacity: 0,
+        transition: {
+            type: 'easeIn',
+            duration: 1.5,
+        },
+    }
+}
+
+const FadeInWithBlur = {
+    initial: {
+        opacity: 0,
+        filter: 'blur(4px)',
+    },
+    animate: {
+        opacity: 1,
+        filter: 'blur(0)',
+        transition: {
+            type: 'easeIn',
+            duration: 1,
+        },
+    }
+}
+
+const FadeOutWithBlur = {
+    initial: {
+        opacity: 1,
+        filter: 'blur(0)',
+    },
+    animate: {
+        opacity: 0,
+        filter: 'blur(4px)',
+        transition: {
+            type: 'easeIn',
+            duration: 1,
+        },
+    }
+}
+
+const transitions = {
+    FadeInFromLeft,
+    FadeInFromRight,
+    FadeInFromTop,
+    FadeInFromBottom,
+    ScaleIn,
+    RotateIn,
+    ZoomIn,
+    ZoomOut,
+    BounceIn,
+    StaggerContainer,
+    SlideOutLeft,
+    FlipIn,
+    FadeIn,
+    FadeOut,
+    FadeInWithBlur,
+    FadeOutWithBlur,
+}
+
+export default transitions
