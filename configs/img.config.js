@@ -1,21 +1,41 @@
 const images = {
-    logo: `/icons/logo.svg`,
-    hero: {
-      sphere: `/images/hero/sphere.webp`,
-      people: `/images/hero/people.webp`,
-      card_1: `/images/hero/card_1.png`,
-      card_2: `/images/hero/card_2.png`,
-      compliance: `/images/hero/compliance.svg`,
-      virtual_hr: `/images/hero/virtual_hr.svg`,
-      virtual_team_management: `/images/hero/virtual_team_management.svg`,
-      talent_Acquisition: `/images/hero/talent_Acquisition.svg`,
-      arrow_down_right: `/images/hero/arrow_down_right.png`,
+  logo: `/icons/logo.svg`,
+  hero: {
+    sphere: `/images/hero/sphere.webp`,
+    people: `/images/hero/people.webp`,
+    card_1: `/images/hero/card_1.png`,
+    card_2: `/images/hero/card_2.png`,
+    compliance: `/images/hero/compliance.svg`,
+    virtual_hr: `/images/hero/virtual_hr.svg`,
+    virtual_team_management: `/images/hero/virtual_team_management.svg`,
+    talent_Acquisition: `/images/hero/talent_Acquisition.svg`,
+    arrow_down_right: `/images/hero/arrow_down_right.png`,
 
-      search: `/icons/hero/search.svg`,
-      board: `/icons/hero/board.svg`,
-      file: `/icons/hero/file.svg`,
-      network: `/icons/hero/network.svg`,
-    },
-  };
-  
-  export default images;
+    search: `/icons/hero/search.svg`,
+    board: `/icons/hero/board.svg`,
+    file: `/icons/hero/file.svg`,
+    network: `/icons/hero/network.svg`,
+  },
+  brand: {
+    '1': `/images/brand/1.webp`,
+    '2': `/images/brand/2.webp`,
+    '3': `/images/brand/3.webp`,
+    '4': `/images/brand/4.webp`,
+    '5': `/images/brand/5.webp`,
+    '6': `/images/brand/6.webp`,
+    '7': `/images/brand/7.webp`,
+    '8': `/images/brand/8.webp`,
+    '9': `/images/brand/9.webp`,
+    '10': `/images/brand/10.webp`,
+    '11': `/images/brand/11.webp`,
+    '12': `/images/brand/12.webp`,
+    '13': `/images/brand/13.webp`,
+    '14': `/images/brand/14.webp`,
+    '15': `/images/brand/15.webp`,
+    '16': `/images/brand/16.webp`,
+    '17': `/images/brand/17.webp`,
+    '18': `/images/brand/18.webp`,
+  },
+};
+
+export default images;

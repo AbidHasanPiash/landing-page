@@ -25,7 +25,13 @@ export default function Hero() {
                                 ]}
                             />
                         </div>
-                        <p className='text-xl lg:text-2xl text-center lg:text-start'>We are an end-to-end remoteOps platform that solves all things global HR</p>
+                        <motion.p 
+                            variants={transitions.FadeInFromRight}
+                            initial="initial"
+                            animate="animate"
+                            className='text-xl lg:text-2xl text-center lg:text-start'>
+                            We are an end-to-end remoteOps platform that solves all things global HR
+                        </motion.p>
                         <div className='flex items-center justify-center lg:justify-start'>
                             <div>
                                 <Button className={'px-8 py-3 font-bold'}>Looking for talent</Button>
@@ -65,7 +71,7 @@ export default function Hero() {
                             initial="initial"
                             animate="animate"
                             className="absolute bottom-0 right-0 lg:bottom-0 xl:bottom-16 lg:left-48 xl:left-64 w-48"
-                            custom={{ delay: 0.5 }}
+                            custom={{ delay: 0.3 }}
                         >
                             <TiltCardAnimation>
                                 <img src={images.hero.card_2} alt="card_2" />
@@ -126,7 +132,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className='lg:hidden w-full grid grid-cols-2 gap-4 place-items-center'>
+                <div className='lg:hidden w-full my-10 grid grid-cols-2 gap-4 place-items-center'>
                     <div className='w-full h-full p-4 space-y-4 rounded-xl flex flex-col items-center justify-center bg-secondary-hover'>
                         <img src={images.hero.search} alt="search" />
                         <h2 className='font-bold text-center text-xl'>Talent Acquisition</h2>
