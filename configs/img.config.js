@@ -36,6 +36,30 @@ const images = {
     '17': `/images/brand/17.webp`,
     '18': `/images/brand/18.webp`,
   },
+  blog: {
+    blog_1: {
+      main: `/images/blog/blog_1_main.webp`,
+      sub: `/images/blog/blog_1_sub.png`,
+    },
+    blog_2: {
+      main: `/images/blog/blog_2_main.webp`,
+      sub_1: `/images/blog/blog_2_sub_1.webp`,
+      sub_2: `/images/blog/blog_2_sub_2.webp`,
+      sub_3: `/images/blog/blog_2_sub_3.webp`,
+    },
+    blog_3: {
+      main: `/images/blog/blog_3_main.webp`,
+      sub: `/images/blog/blog_3_sub.webp`,
+    },
+    blog_4: {
+      main: `/images/blog/blog_4_main.webp`,
+      sub: `/images/blog/blog_4_sub.png`,
+    },
+    blog_5: {
+      main: `/images/blog/blog_5_main.webp`,
+      sub: `/images/blog/blog_5_sub.webp`,
+    },
+  }
 };
 
 export default images;

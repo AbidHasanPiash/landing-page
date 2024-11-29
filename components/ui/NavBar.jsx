@@ -20,11 +20,11 @@ export default function NavBar() {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setMounted(true); // Set to true when the component is mounted on the client
+        setMounted(true);
     }, []);
 
     return (
-        <nav className="w-full h-14 md:h-20 bg-background">
+        <nav className="w-full sticky top-0 z-40 h-14 md:h-20 bg-background">
             <div className="w-full h-full max-w-8xl mx-auto items-center">
                 <div className="w-full h-full px-4 md:px-8 lg:px-20 flex items-center justify-between">
                     {/* Main Logo */}
