@@ -88,6 +88,9 @@ const images = {
             desktop: `/images/team/team_right_desktop.png`,
         }
     },
+    look: {
+        image: `/images/look/look.svg`
+    }
 };
 
 export default images;
