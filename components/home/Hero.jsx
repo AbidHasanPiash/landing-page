@@ -1,7 +1,8 @@
-import images from '@/configs/img.config'
 import React from 'react'
-import Button from '@/components/common/Button'
 import Link from 'next/link'
+import images from '@/configs/img.config'
+import Button from '@/components/common/Button'
+import TypingAnimation from '@/components/common/TypingAnimation';
 import { BsInfoLg } from "react-icons/bs";
 
 export default function Hero() {
@@ -12,15 +13,19 @@ export default function Hero() {
                     <div className='space-y-8 pr-20'>
                         <div className='text-7xl font-bold'>
                             <h1>Build and Manage Global</h1>
-                            <div>
-                                <p>Compliances |</p>
-                            </div>
+                            <TypingAnimation
+                                words={[
+                                    'Compliances',
+                                    'HR Operations',
+                                    'Remote Teams',
+                                ]}
+                            />
                         </div>
                         <p className='text-2xl'>We are an end-to-end remoteOps platform that solves all things global HR</p>
                         <div>
                             <Button className={'px-8 py-3 font-bold'}>Looking for talent</Button>
                             <div className='flex items-end'>
-                                <img src={images.hero.arrow_down_right} alt="talent_Acquisition"/>
+                                <img src={images.hero.arrow_down_right} alt="talent_Acquisition" />
                                 <Link href={'#'} className='-mb-2 px-2 py-1 rounded-full flex items-center space-x-1 bg-muted'>
                                     <BsInfoLg />
                                     <span>Pay only for results</span>

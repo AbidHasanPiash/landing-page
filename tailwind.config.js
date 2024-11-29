@@ -30,6 +30,15 @@ module.exports = {
       maxWidth: {
         '8xl': '91rem',
       },
+      keyframes: {
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
+      },
+      animation: {
+        blink: 'typing 4s steps(40, end) infinite, blink 1s step-start infinite',
+      },
     },
   },
   plugins: [],
