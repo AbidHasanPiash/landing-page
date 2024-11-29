@@ -1,13 +1,27 @@
+'use client'
 import React from 'react';
 import LearnMore from '@/components/common/LearnMore';
 import images from '@/configs/img.config';
+import useMediaQuery from '@/hooks/useMediaQuery';
 
 export default function Team() {
+    const { isMobile } = useMediaQuery();
     return (
         <section
-            className="w-full h-full py-28 bg-gradient-to-l from-secondary to-accent"
+            className="w-full h-full py-28 bg-gradient-to-t md:bg-gradient-to-l from-secondary to-accent"
+            // Mobile
+            // style={{
+            //     background: 'linear-gradient(to top, var(--tw-gradient-from) 50%, var(--tw-gradient-to) 50%)',
+            // }}
+            // Desktop
+            // style={{
+            //     background: 'linear-gradient(to left, var(--tw-gradient-from) 50%, var(--tw-gradient-to) 50%)',
+            // }}
+
             style={{
-                background: 'linear-gradient(to left, var(--tw-gradient-from) 50%, var(--tw-gradient-to) 50%)',
+                background: isMobile
+                    ? 'linear-gradient(to top, var(--tw-gradient-from) 50%, var(--tw-gradient-to) 50%)' // Mobile gradient
+                    : 'linear-gradient(to left, var(--tw-gradient-from) 50%, var(--tw-gradient-to) 50%)', // Desktop gradient
             }}
         >
             <div className="w-full h-full max-w-8xl mx-auto">
