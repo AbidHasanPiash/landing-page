@@ -53,7 +53,7 @@ export default function Hero() {
                             variants={transitions.FadeInFromBottom}
                             initial="initial"
                             animate="animate"
-                            className="absolute -z-10 lg:z-10 -top-4 left-0 lg:top-24 xl:top-32 lg:left-8 w-48"
+                            className="absolute -z-10 lg:z-0 -top-4 left-0 lg:top-24 xl:top-32 lg:left-8 w-48"
                         >
                             <TiltCardAnimation>
                                 <img src={images.hero.card_1} alt="card_1" />
@@ -126,7 +126,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className='w-full grid grid-cols-2 gap-4 place-items-center'>
+                <div className='lg:hidden w-full grid grid-cols-2 gap-4 place-items-center'>
                     <div className='w-full h-full p-4 space-y-4 rounded-xl flex flex-col items-center justify-center bg-secondary-hover'>
                         <img src={images.hero.search} alt="search" />
                         <h2 className='font-bold text-center text-xl'>Talent Acquisition</h2>
