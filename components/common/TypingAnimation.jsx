@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-export default function TypingAnimation({ words, speed = 50, pause = 5000 }) {
+export default function TypingAnimation({ words, speed = 50, pause = 3000 }) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [typedText, setTypedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);

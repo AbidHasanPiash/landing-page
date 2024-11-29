@@ -19,7 +19,7 @@ module.exports = {
         },
         secondary: {
           DEFAULT: "#d7f427", // Secondary accent
-          hover: "#7e22ce",   // Darker shade
+          hover: "#ebffca",   // Darker shade
         },
         muted: "#edeca2", // Muted gray for subtle backgrounds
         highlight: "#facc15", // Bright yellow for highlights

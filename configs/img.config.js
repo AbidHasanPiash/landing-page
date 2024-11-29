@@ -10,6 +10,11 @@ const images = {
       virtual_team_management: `/images/hero/virtual_team_management.svg`,
       talent_Acquisition: `/images/hero/talent_Acquisition.svg`,
       arrow_down_right: `/images/hero/arrow_down_right.png`,
+
+      search: `/icons/hero/search.svg`,
+      board: `/icons/hero/board.svg`,
+      file: `/icons/hero/file.svg`,
+      network: `/icons/hero/network.svg`,
     },
   };
   

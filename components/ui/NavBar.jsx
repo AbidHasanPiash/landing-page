@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import images from '@/configs/img.config';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import Button from '../common/Button';
@@ -16,6 +16,13 @@ export default function NavBar() {
         { label: 'Blog', href: '/blog' },
     ];
 
+    // Track whether the component has mounted to handle client-side rendering
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true); // Set to true when the component is mounted on the client
+    }, []);
+
     return (
         <nav className="w-full h-14 md:h-20 bg-background">
             <div className="w-full h-full max-w-8xl mx-auto items-center">
@@ -24,8 +31,8 @@ export default function NavBar() {
                     <img src={images.logo} alt="logo" className="h-8 md:h-10" />
 
                     {/* Responsive Layout for Desktop and Mobile */}
-                    {(isMobile || isTab) && <MobileNav menu={menu} />}
-                    {isDesktop && <DesktopNav menu={menu} />}
+                    {(mounted && (isMobile || isTab)) && <MobileNav menu={menu} />}
+                    {(mounted && isDesktop) && <DesktopNav menu={menu} />}
                 </div>
             </div>
         </nav>
@@ -51,17 +58,8 @@ function DesktopNav({ menu }) {
 // Mobile Navigation Component
 function MobileNav({ menu }) {
     return (
-        <div className="relative">
-            <button className="text-gray-800">☰</button>
-            <ul className="absolute top-12 right-0 bg-white border shadow-lg rounded-md w-40">
-                {menu.map((item, index) => (
-                    <li key={index} className="border-b last:border-none">
-                        <a href={item.href} className="block px-4 py-2 hover:bg-gray-100">
-                            {item.label}
-                        </a>
-                    </li>
-                ))}
-            </ul>
+        <div>
+            mobile
         </div>
     );
 }
