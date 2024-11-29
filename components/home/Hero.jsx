@@ -50,10 +50,7 @@ export default function Hero() {
                             variants={transitions.FadeInWithBlur}
                             initial="initial"
                             animate="animate"
-                            transition={{
-                                opacity: { delay: 5 },    // Add delay for opacity transition
-                                filter: { delay: 5 },     // Add delay for filter (blur) transition
-                            }}
+                            custom={{ delay: 1.5 }}
                         />
                         <motion.img
                             src={images.hero.people}
@@ -62,6 +59,7 @@ export default function Hero() {
                             variants={transitions.FadeInFromRight}
                             initial="initial"
                             animate="animate"
+                            custom={{ delay: 0.7 }}
                         />
                         <motion.img
                             src={images.hero.card_1}
@@ -78,6 +76,7 @@ export default function Hero() {
                             variants={transitions.FadeInFromBottom}
                             initial="initial"
                             animate="animate"
+                            custom={{ delay: 0.2 }}
                         />
                         <motion.img
                             src={images.hero.virtual_hr}
@@ -86,6 +85,7 @@ export default function Hero() {
                             variants={transitions.FadeInWithBlur}
                             initial="initial"
                             animate="animate"
+                            custom={{ delay: 1.5 }}
                         />
                         <motion.img
                             src={images.hero.compliance}
@@ -94,6 +94,7 @@ export default function Hero() {
                             variants={transitions.FadeInWithBlur}
                             initial="initial"
                             animate="animate"
+                            custom={{ delay: 1.5 }}
                         />
                         <motion.img
                             src={images.hero.virtual_team_management}
@@ -102,6 +103,7 @@ export default function Hero() {
                             variants={transitions.FadeInWithBlur}
                             initial="initial"
                             animate="animate"
+                            custom={{ delay: 1.5 }}
                         />
                     </div>
                 </div>
