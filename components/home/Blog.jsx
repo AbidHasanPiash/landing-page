@@ -3,8 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import transitions from '@/animations/transitions'
 import images from '@/configs/img.config'
-import Link from 'next/link'
-import { RiLogoutCircleRLine } from "react-icons/ri";
+import LearnMore from '@/components/common/LearnMore'
 
 export default function Blog() {
     return (
@@ -220,10 +219,7 @@ function BlogContainer({ title, description, link, group }) {
             >
                 <h1 className='w-full max-w-3xl text-3xl lg:text-4xl font-bold'> {title} </h1>
                 <p className='opacity-50'> {description} </p>
-                <Link href={link || '#'} className='flex items-center font-bold space-x-2'>
-                    <span>Learn more</span>
-                    <RiLogoutCircleRLine />
-                </Link>
+                <LearnMore link={link}/>
             </motion.div>
             {group}
         </div>

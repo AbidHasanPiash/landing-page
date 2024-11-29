@@ -24,6 +24,7 @@ module.exports = {
           DEFAULT: "#d7f427", // Secondary accent
           hover: "#ebffca",   // Darker shade
         },
+        accent: "#085fd1",
         muted: "#edeca2", // Muted gray for subtle backgrounds
         highlight: "#facc15", // Bright yellow for highlights
         error: "#ef4444", // Red for error states

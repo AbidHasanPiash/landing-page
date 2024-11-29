@@ -77,7 +77,17 @@ const images = {
             main: `/images/hs/hs_4_main.webp`,
             sub: `/images/hs/hs_4_sub.png`,
         },
-    }
+    },
+    team: {
+        left: {
+            mobile: `/images/team/team_left_mobile.webp`,
+            desktop: `/images/team/team_left_desktop.png`,
+        },
+        right: {
+            mobile: `/images/team/team_right_mobile.webp`,
+            desktop: `/images/team/team_right_desktop.png`,
+        }
+    },
 };
 
 export default images;

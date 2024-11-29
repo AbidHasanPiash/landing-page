@@ -44,7 +44,7 @@ export default function HorizontalScroll() {
                             number={
                                 <div className='space-y-2'>
                                     <div className='w-full text-3xl font-bold flex items-center justify-between'>
-                                        <span className='text-blue-500'>01</span>
+                                        <span className='text-accent'>01</span>
                                         <span className='text-gray-300'>02</span>
                                     </div>
                                     <div className='w-full h-1 bg-gray-300' />
@@ -80,7 +80,7 @@ export default function HorizontalScroll() {
                             number={
                                 <div className='space-y-2'>
                                     <div className='w-full text-3xl font-bold flex items-center justify-between'>
-                                        <span className='text-blue-500'>02</span>
+                                        <span className='text-accent'>02</span>
                                         <span className='text-gray-300'>03</span>
                                     </div>
                                     <div className='w-full h-1 bg-gray-300' />
@@ -106,7 +106,7 @@ export default function HorizontalScroll() {
 
                         {/* Screen 3 */}
                         <Screen
-                            className={'bg-blue-600 text-white'}
+                            className={'bg-accent text-white'}
                             title={'Team Management'}
                             description={`
                                 We help you better manage your team with strategic consultation, 
@@ -154,7 +154,7 @@ export default function HorizontalScroll() {
                             number={
                                 <div className='space-y-2'>
                                     <div className='w-full text-3xl font-bold flex items-center justify-between'>
-                                        <span className='text-blue-500'>04</span>
+                                        <span className='text-accent'>04</span>
                                     </div>
                                     <div className='w-full h-1 bg-gray-300' />
                                 </div>
@@ -186,7 +186,7 @@ export default function HorizontalScroll() {
 const Screen = ({ className, title, description, number, group }) => {
     return (
         <div className={cn("w-screen h-screen flex items-center justify-center", className)}>
-            <div className='w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-20'>
+            <div className='w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-20 pt-14 md:pt-20'>
                 <div className='grid md:grid-cols-2 place-items-center'>
                     <div className='lg:pr-40 space-y-10'>
                         <h1 className='w-full max-w-3xl text-3xl lg:text-4xl font-bold'> {title} </h1>
