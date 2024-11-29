@@ -7,6 +7,7 @@ import TypingAnimation from '@/components/common/TypingAnimation';
 import { BsInfoLg } from "react-icons/bs";
 import { motion } from 'framer-motion';
 import transitions from '@/animations/transitions';
+import TiltCardAnimation from '@/components/common/TiltCardAnimation'
 
 export default function Hero() {
     return (
@@ -40,9 +41,46 @@ export default function Hero() {
                 <div className='grid place-content-center p-2'>
                     <div className="relative">
                         {/* Sphere Image */}
-                        <img src={images.hero.sphere} alt="sphere" className="relative z-0" />
+                        <TiltCardAnimation>
+                            <img src={images.hero.sphere} alt="sphere" className="relative z-0" />
+                        </TiltCardAnimation>
 
                         {/* Overlaying Images with Animations */}
+                        <motion.div
+                            variants={transitions.FadeInFromBottom}
+                            initial="initial"
+                            animate="animate"
+                            className="absolute lg:top-24 xl:top-32 left-8 w-48"
+                        >
+                            <TiltCardAnimation>
+                                <img src={images.hero.card_1} alt="card_1" />
+                            </TiltCardAnimation>
+                        </motion.div>
+
+                        <motion.div
+                            variants={transitions.FadeInFromBottom}
+                            initial="initial"
+                            animate="animate"
+                            className="absolute lg:bottom-0 xl:bottom-16 lg:left-48 xl:left-64 w-48"
+                            custom={{ delay: 0.5 }}
+                        >
+                            <TiltCardAnimation>
+                                <img src={images.hero.card_2} alt="card_2" />
+                            </TiltCardAnimation>
+                        </motion.div>
+
+                        <motion.div
+                            variants={transitions.FadeInFromRight}
+                            initial="initial"
+                            animate="animate"
+                            className="absolute top-16 right-4"
+                            custom={{ delay: 1 }}
+                        >
+                            <TiltCardAnimation>
+                                <img src={images.hero.people} alt="people" className="h-24" />
+                            </TiltCardAnimation>
+                        </motion.div>
+
                         <motion.img
                             src={images.hero.talent_Acquisition}
                             alt="talent_Acquisition"
@@ -50,34 +88,9 @@ export default function Hero() {
                             variants={transitions.FadeInWithBlur}
                             initial="initial"
                             animate="animate"
-                            custom={{ delay: 1.5 }}
+                            custom={{ delay: 2 }}
                         />
-                        <motion.img
-                            src={images.hero.people}
-                            alt="people"
-                            className="absolute top-16 right-4 h-24"
-                            variants={transitions.FadeInFromRight}
-                            initial="initial"
-                            animate="animate"
-                            custom={{ delay: 0.7 }}
-                        />
-                        <motion.img
-                            src={images.hero.card_1}
-                            alt="card_1"
-                            className="absolute lg:top-24 xl:top-32 left-8 w-48"
-                            variants={transitions.FadeInFromBottom}
-                            initial="initial"
-                            animate="animate"
-                        />
-                        <motion.img
-                            src={images.hero.card_2}
-                            alt="card_2"
-                            className="absolute lg:bottom-0 xl:bottom-16 lg:left-48 xl:left-64 w-48"
-                            variants={transitions.FadeInFromBottom}
-                            initial="initial"
-                            animate="animate"
-                            custom={{ delay: 0.2 }}
-                        />
+
                         <motion.img
                             src={images.hero.virtual_hr}
                             alt="virtual_hr"
@@ -85,8 +98,9 @@ export default function Hero() {
                             variants={transitions.FadeInWithBlur}
                             initial="initial"
                             animate="animate"
-                            custom={{ delay: 1.5 }}
+                            custom={{ delay: 2 }}
                         />
+
                         <motion.img
                             src={images.hero.compliance}
                             alt="compliance"
@@ -94,8 +108,9 @@ export default function Hero() {
                             variants={transitions.FadeInWithBlur}
                             initial="initial"
                             animate="animate"
-                            custom={{ delay: 1.5 }}
+                            custom={{ delay: 2 }}
                         />
+
                         <motion.img
                             src={images.hero.virtual_team_management}
                             alt="virtual_team_management"
@@ -103,7 +118,7 @@ export default function Hero() {
                             variants={transitions.FadeInWithBlur}
                             initial="initial"
                             animate="animate"
-                            custom={{ delay: 1.5 }}
+                            custom={{ delay: 2 }}
                         />
                     </div>
                 </div>

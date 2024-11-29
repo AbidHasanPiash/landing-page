@@ -2,6 +2,7 @@
 import React from 'react';
 import images from '@/configs/img.config';
 import useMediaQuery from '@/hooks/useMediaQuery';
+import Button from '../common/Button';
 
 export default function NavBar() {
     const { isMobile, isTab, isDesktop } = useMediaQuery();
@@ -34,7 +35,7 @@ export default function NavBar() {
 // Desktop Navigation Component
 function DesktopNav({ menu }) {
     return (
-        <ul className="flex gap-8">
+        <ul className="flex items-center gap-8">
             {menu.map((item, index) => (
                 <li key={index}>
                     <a href={item.href} className="text-gray-800 hover:text-primary">
@@ -42,6 +43,7 @@ function DesktopNav({ menu }) {
                     </a>
                 </li>
             ))}
+            <Button className={'px-8 py-3 font-bold'}>Contact</Button>
         </ul>
     );
 }
