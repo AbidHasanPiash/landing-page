@@ -7,12 +7,15 @@ import images from "@/configs/img.config";
 
 export default function Testimonial({ testimonials, autoplay = false }) {
     const [active, setActive] = useState(0);
+    const [direction, setDirection] = useState(1); // 1 for next, -1 for prev
 
     const handleNext = () => {
+        setDirection(1); // Moving to the next testimonial
         setActive((prev) => (prev + 1) % testimonials.length);
     };
 
     const handlePrev = () => {
+        setDirection(-1); // Moving to the previous testimonial
         setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     };
 
@@ -32,7 +35,7 @@ export default function Testimonial({ testimonials, autoplay = false }) {
                         Clients say
                     </h2>
                     {/* Testimonial Text */}
-                    <div className="lg:col-span-2 flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-10">
+                    <div className="overflow-hidden lg:col-span-2 flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-10">
                         <img
                             src={images.quote}
                             alt="look.image"
@@ -41,10 +44,10 @@ export default function Testimonial({ testimonials, autoplay = false }) {
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={active}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
-                                transition={{ duration: 0.3 }}
+                                initial={{ opacity: 0, x: direction === 1 ? 300 : -300 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: direction === 1 ? -300 : 300 }}
+                                transition={{ duration: 0.1 }}
                                 className="space-y-10 lg:space-y-20"
                             >
                                 <p className="text-lg lg:text-2xl">
