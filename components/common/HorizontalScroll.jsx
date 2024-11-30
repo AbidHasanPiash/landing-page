@@ -1,15 +1,34 @@
 'use client';
-import { motion, useTransform, useScroll } from 'framer-motion';
+import { motion, useTransform, useScroll, useSpring } from 'framer-motion';
 import { useRef } from 'react';
 import transitions from '@/animations/transitions';
 import images from '@/configs/img.config';
 import { cn } from '@/lib/utils';
+import ProgressingScroll from './ProgressingScroll';
 
 export default function HorizontalScroll() {
     const targetRef = useRef(null);
-    const { scrollYProgress } = useScroll({ target: targetRef });
+    // const { scrollYProgress } = useScroll({ target: targetRef });
+    // const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+
+
+
+    // Use scroll hook to track scroll progress on the target section
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+        offset: ["start start", "end end"],
+    });
+
+    // Map vertical scroll progress to horizontal movement
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
 
+     // Apply spring smoothing to the scroll progress
+     const smoothScrollYProgress = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
+    
     return (
         <section>
             <div ref={targetRef} className="relative h-[400vh]">
@@ -35,7 +54,8 @@ export default function HorizontalScroll() {
                                         <span className='text-accent'>01</span>
                                         <span className='text-gray-300'>02</span>
                                     </div>
-                                    <div className='w-full h-1 bg-gray-300' />
+                                    {/* Scroll Indicator Items */}
+                                    <ProgressingScroll scrollYProgress={smoothScrollYProgress} />
                                 </div>
                             }
                             group={
@@ -79,7 +99,8 @@ export default function HorizontalScroll() {
                                         <span className='text-accent'>02</span>
                                         <span className='text-gray-300'>03</span>
                                     </div>
-                                    <div className='w-full h-1 bg-gray-300' />
+                                    {/* Scroll Indicator Items */}
+                                    <ProgressingScroll scrollYProgress={smoothScrollYProgress} />
                                 </div>
                             }
                             group={
@@ -124,7 +145,8 @@ export default function HorizontalScroll() {
                                         <span className='text-background'>03</span>
                                         <span className='text-gray-300'>04</span>
                                     </div>
-                                    <div className='w-full h-1 bg-gray-300' />
+                                    {/* Scroll Indicator Items */}
+                                    <ProgressingScroll scrollYProgress={smoothScrollYProgress} />
                                 </div>
                             }
                             group={
@@ -168,7 +190,8 @@ export default function HorizontalScroll() {
                                     <div className='w-full text-3xl font-bold flex items-center justify-between'>
                                         <span className='text-accent'>04</span>
                                     </div>
-                                    <div className='w-full h-1 bg-gray-300' />
+                                    {/* Scroll Indicator Items */}
+                                    <ProgressingScroll scrollYProgress={smoothScrollYProgress} />
                                 </div>
                             }
                             group={
