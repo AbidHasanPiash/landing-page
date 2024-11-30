@@ -31,11 +31,11 @@ export default function Testimonial({ testimonials, autoplay = false }) {
         initial: { opacity: 0, x: direction === 1 ? 300 : -300 },
         animate: { opacity: 1, x: 0 },
         exit: { opacity: 0, x: direction === 1 ? -300 : 300 },
-        transition: { duration: 0.4, ease: "easeInOut" }, // Smooth easing
+        transition: { duration: 0.1, ease: "easeInOut" }, // Smooth easing
     };
 
     return (
-        <div className="relative h-[750px] lg:h-[550px] flex flex-col py-20">
+        <div className="relative h-[750px] lg:h-[550px] flex flex-col">
             <div className="flex flex-grow">
                 <div className="grid lg:grid-cols-3 gap-10">
                     {/* Section Title */}

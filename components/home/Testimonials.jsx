@@ -27,7 +27,7 @@ export default function Testimonials() {
     ];
     return (
         <div className='w-full h-full'>
-            <div className='w-full h-full max-w-8xl mx-auto px-4 md:px-8 lg:px-20'>
+            <div className='w-full h-full max-w-8xl mx-auto px-4 md:px-8 lg:px-20 py-16'>
                 <Testimonial testimonials={testimonials} />
             </div>
         </div>

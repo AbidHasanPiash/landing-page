@@ -26,7 +26,7 @@ export default function Team() {
         >
             <div className="w-full h-full max-w-8xl mx-auto">
                 <div className="w-full h-full px-4 md:px-8 lg:px-20 grid lg:grid-cols-2 gap-32">
-                    <div className='pr-20 space-y-10 text-background'>
+                    <div className='lg:pr-20 space-y-10 text-background'>
                         <h1 className="text-4xl lg:text-5xl font-bold">Supercharge your team</h1>
                         <p>
                             You want to empower your current team of high performers by adding specialists 
@@ -44,7 +44,7 @@ export default function Team() {
                         />
                         <LearnMore/>
                     </div>
-                    <div className='pr-20 space-y-10 text-foreground'>
+                    <div className='lg:pr-20 space-y-10 text-foreground'>
                         <h1 className="text-4xl lg:text-5xl font-bold">Build your dream team</h1>
                         <p>
                             You need to build a team from scratch. You hand-pick resources that align with 

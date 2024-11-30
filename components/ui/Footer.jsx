@@ -40,11 +40,13 @@ export default function Footer() {
                 <div className="grid lg:grid-cols-9 gap-10">
                     {/* Left Section */}
                     <div className="space-y-10 lg:col-span-4 grid">
-                        <img
-                            src={images.footer.logo}
-                            alt="logo"
-                            className="h-8 md:h-10"
-                        />
+                        <div className="flex items-center justify-center lg:justify-start">
+                            <img
+                                src={images.footer.logo}
+                                alt="logo"
+                                className="h-8 md:h-10"
+                            />
+                        </div>
                         <div className="text-center space-y-4 bg-muted-hover text-foreground p-4 rounded-[18px] w-full lg:max-w-sm">
                             <img
                                 src={images.footer.discord}

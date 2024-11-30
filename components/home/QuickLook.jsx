@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function QuickLook() {
   return (
-    <section className='w-full h-full lg:py-28 bg-primary text-background'>
+    <section className='w-full h-full pb-16 lg:py-28 bg-primary text-background'>
         <div className="w-full h-full max-w-8xl mx-auto">
             <div className="w-full h-full px-4 md:px-8 lg:px-20 grid lg:grid-cols-2">
                 <div className='space-y-4 lg:pr-28 flex flex-col items-center justify-center lg:items-start lg:justify-start text-center lg:text-start'>
