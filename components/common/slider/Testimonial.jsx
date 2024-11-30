@@ -24,7 +24,7 @@ export default function Testimonial({ testimonials, autoplay = false }) {
     }, [autoplay]);
 
     return (
-        <div className="lg:h-[550px] flex flex-col space-y-10 py-20">
+        <div className="relative h-[750px] lg:h-[550px] flex flex-col py-20">
             <div className="flex flex-grow">
                 <div className="grid lg:grid-cols-3 gap-10">
                     {/* Section Title */}
@@ -36,7 +36,7 @@ export default function Testimonial({ testimonials, autoplay = false }) {
                         <img
                             src={images.quote}
                             alt="look.image"
-                            className='w-8 lg:w-auto aspect-square'
+                            className="w-8 lg:w-auto aspect-square"
                         />
                         <AnimatePresence mode="wait">
                             <motion.div
@@ -45,7 +45,7 @@ export default function Testimonial({ testimonials, autoplay = false }) {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
                                 transition={{ duration: 0.3 }}
-                                className="space-y-20"
+                                className="space-y-10 lg:space-y-20"
                             >
                                 <p className="text-lg lg:text-2xl">
                                     {testimonials[active].quote}
@@ -57,12 +57,8 @@ export default function Testimonial({ testimonials, autoplay = false }) {
                                         className="h-24 aspect-square rounded-full object-cover"
                                     />
                                     <div>
-                                        <p className="font-bold">
-                                            {testimonials[active].name}
-                                        </p>
-                                        <p className="text-sm">
-                                            {testimonials[active].designation}
-                                        </p>
+                                        <p className="font-bold">{testimonials[active].name}</p>
+                                        <p className="text-sm">{testimonials[active].designation}</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -72,7 +68,7 @@ export default function Testimonial({ testimonials, autoplay = false }) {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="flex justify-between items-center gap-6">
+            <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex justify-between items-center gap-6 w-full px-4">
                 <button onClick={handlePrev}>
                     <HiOutlineArrowSmLeft className="h-6 w-6 lg:h-14 lg:w-14" />
                 </button>
