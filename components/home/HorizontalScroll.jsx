@@ -53,13 +53,21 @@ export default function HorizontalScroll() {
                             group={
                                 <div className='relative flex items-end justify-end w-full h-auto'>
                                     {/* Background Image */}
-                                    <img
+                                    <motion.img
+                                        variants={transitions.ZoomOut}
+                                        initial="initial"
+                                        whileInView="animate"
+                                        viewport={{ once: true, amount: 0.5 }}
                                         src={images.hs.hs_1.main}
                                         alt="main"
                                         className='w-full max-w-[448px] rounded-2xl'
                                     />
                                     {/* Overlay Image */}
-                                    <img
+                                    <motion.img
+                                        variants={transitions.FadeInFromRight}
+                                        initial="initial"
+                                        whileInView="animate"
+                                        viewport={{ once: true, amount: 0.5 }}
                                         src={images.hs.hs_1.sub}
                                         alt="sub"
                                         className='absolute w-full max-w-[282px] top-1/2 left-2 -translate-y-1/2'
@@ -89,13 +97,21 @@ export default function HorizontalScroll() {
                             group={
                                 <div className='relative flex items-end justify-end w-full h-auto'>
                                     {/* Background Image */}
-                                    <img
+                                    <motion.img
+                                        variants={transitions.ZoomOut}
+                                        initial="initial"
+                                        whileInView="animate"
+                                        viewport={{ once: true, amount: 0.5 }}
                                         src={images.hs.hs_2.main}
                                         alt="main"
                                         className='w-full max-w-[448px] rounded-2xl'
                                     />
                                     {/* Overlay Image */}
-                                    <img
+                                    <motion.img
+                                        variants={transitions.FadeInFromRight}
+                                        initial="initial"
+                                        whileInView="animate"
+                                        viewport={{ once: true, amount: 0.5 }}
                                         src={images.hs.hs_2.sub}
                                         alt="sub"
                                         className='absolute w-full max-w-[282px] top-5 left-2'
@@ -126,13 +142,21 @@ export default function HorizontalScroll() {
                             group={
                                 <div className='relative flex items-end justify-end w-full h-auto'>
                                     {/* Background Image */}
-                                    <img
+                                    <motion.img
+                                        variants={transitions.ZoomOut}
+                                        initial="initial"
+                                        whileInView="animate"
+                                        viewport={{ once: true, amount: 0.5 }}
                                         src={images.hs.hs_3.main}
                                         alt="main"
                                         className='w-full max-w-[448px] rounded-2xl'
                                     />
                                     {/* Overlay Image */}
-                                    <img
+                                    <motion.img
+                                        variants={transitions.FadeInFromRight}
+                                        initial="initial"
+                                        whileInView="animate"
+                                        viewport={{ once: true, amount: 0.5 }}
                                         src={images.hs.hs_3.sub}
                                         alt="sub"
                                         className='absolute w-full max-w-[282px] bottom-10 left-2'
@@ -162,13 +186,21 @@ export default function HorizontalScroll() {
                             group={
                                 <div className='relative flex items-end justify-end w-full h-auto'>
                                     {/* Background Image */}
-                                    <img
+                                    <motion.img
+                                        variants={transitions.ZoomOut}
+                                        initial="initial"
+                                        whileInView="animate"
+                                        viewport={{ once: true, amount: 0.5 }}
                                         src={images.hs.hs_4.main}
                                         alt="main"
                                         className='w-full max-w-[448px] rounded-2xl'
                                     />
                                     {/* Overlay Image */}
-                                    <img
+                                    <motion.img
+                                        variants={transitions.FadeInFromRight}
+                                        initial="initial"
+                                        whileInView="animate"
+                                        viewport={{ once: true, amount: 0.5 }}
                                         src={images.hs.hs_4.sub}
                                         alt="sub"
                                         className='absolute w-full max-w-[282px] top-10 -right-20'
