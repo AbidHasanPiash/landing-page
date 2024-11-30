@@ -8,13 +8,13 @@ import LearnMore from '@/components/common/LearnMore'
 export default function Blog() {
     return (
         <section className='bg-primary text-background'>
-            <div className='bg-primary sticky top-14 md:top-20 z-10 '>
+            <div className='bg-primary lg:sticky lg:top-14 lg:md:top-20 z-10 '>
                 <motion.h1
                     variants={transitions.FadeInFromBottom}
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: false, amount: 0.5 }}
-                    className='w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-20 py-8 text-4xl lg:text-5xl font-bold'>
+                    className='w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-20 py-16 text-4xl lg:text-5xl font-bold'>
                     <p className='max-w-3xl'>
                         Ensuring access to top vetted talents
                     </p>

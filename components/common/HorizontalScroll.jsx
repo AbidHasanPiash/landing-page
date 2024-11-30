@@ -12,18 +12,6 @@ export default function HorizontalScroll() {
 
     return (
         <section>
-            <div className='bg-primary text-white'>
-                <motion.h1
-                    variants={transitions.FadeInFromBottom}
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{ once: false, amount: 0.5 }}
-                    className='w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-20 py-8 text-4xl lg:text-5xl font-bold'>
-                    <p className='max-w-3xl'>
-                        We are just getting started, there is more to come...
-                    </p>
-                </motion.h1>
-            </div>
             <div ref={targetRef} className="relative h-[400vh]">
                 {/* Sticky container for horizontal scrolling */}
                 <div className="sticky top-0 h-screen flex items-center overflow-hidden">
