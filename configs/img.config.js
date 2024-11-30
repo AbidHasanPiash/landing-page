@@ -93,6 +93,10 @@ const images = {
         // video: `/images/look/videoplayback.mp4`,
     },
     quote: `/icons/quote.svg`,
+    footer: {
+        logo: `/images/footer/logo.svg`,
+        discord: `/images/footer/discord.webp`,
+    },
 };
 
 export default images;
