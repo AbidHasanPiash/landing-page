@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from '@/components/common/Slider';
+import Testimonial from '@/components/common/slider/Testimonial';
 
 export default function Testimonials() {
     const testimonials = [
@@ -39,5 +39,5 @@ export default function Testimonials() {
         src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
     ];
-    return <Slider testimonials={testimonials} />;
+    return <Testimonial testimonials={testimonials} />;
 }
