@@ -1,7 +1,17 @@
+'use client'
 import images from '@/configs/img.config'
-import React from 'react'
+import animationData from '@/public/lottie/lottie.json'
+import Lottie from 'react-lottie';
 
 export default function QuickLook() {
+    const defaultOptions = {
+      loop: true,
+      autoplay: true, // Animation will play automatically
+      animationData: animationData, // Your Lottie JSON file
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice" // Adjust how the animation fits within its container
+      }
+    };
   return (
     <section className='w-full h-full pb-16 lg:py-28 bg-primary text-background'>
         <div className="w-full h-full max-w-8xl mx-auto">
@@ -21,8 +31,9 @@ export default function QuickLook() {
                     </h1>
                     <p>You want to empower your current team of high performers by adding specialists with niche experience. Hand-pick the best resources to contribute to the project.</p>
                 </div>
-                <div>
-                    video
+                <div className="relative w-full h-full">
+                    {/* Lottie Animation Embed */}
+                    <Lottie options={defaultOptions} height="100%" width="100%" />
                 </div>
             </div>
         </div>

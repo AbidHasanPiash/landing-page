@@ -29,9 +29,9 @@ export default function ServiceSlider({ services, autoplay = false }) {
     }, [autoplay]);
 
     const animationSettings = {
-        initial: { opacity: 1, x: direction === 1 ? 300 : -300 },
+        initial: { opacity: 0, x: direction === 1 ? 300 : -300 },
         animate: { opacity: 1, x: 0 },
-        exit: { opacity: 1, x: direction === 1 ? -300 : 300 },
+        exit: { opacity: 0, x: direction === 1 ? -300 : 300 },
         transition: { duration: 0.1, ease: "easeInOut" },
     };
 
