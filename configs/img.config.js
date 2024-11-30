@@ -92,6 +92,7 @@ const images = {
         image: `/images/look/look.svg`,
         // video: `/images/look/videoplayback.mp4`,
     },
+    quote: `/icons/quote.svg`,
 };
 
 export default images;
