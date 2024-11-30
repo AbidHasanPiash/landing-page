@@ -25,7 +25,10 @@ module.exports = {
           hover: "#ebffca",   // Darker shade
         },
         accent: "#085fd1",
-        muted: "#edeca2", // Muted gray for subtle backgrounds
+        muted: {
+          DEFAULT: "#edeca2",
+          hover: "#e0f561"
+        },
         highlight: "#facc15", // Bright yellow for highlights
         error: "#ef4444", // Red for error states
         success: "#22c55e", // Green for success states

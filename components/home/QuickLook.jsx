@@ -21,6 +21,9 @@ export default function QuickLook() {
                     </h1>
                     <p>You want to empower your current team of high performers by adding specialists with niche experience. Hand-pick the best resources to contribute to the project.</p>
                 </div>
+                <div>
+                    video
+                </div>
             </div>
         </div>
     </section>

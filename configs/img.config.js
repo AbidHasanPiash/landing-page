@@ -89,8 +89,9 @@ const images = {
         }
     },
     look: {
-        image: `/images/look/look.svg`
-    }
+        image: `/images/look/look.svg`,
+        // video: `/images/look/videoplayback.mp4`,
+    },
 };
 
 export default images;

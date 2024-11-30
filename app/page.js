@@ -4,6 +4,7 @@ import Hero from "@/components/home/Hero";
 import HorizontalScroll from "@/components/home/HorizontalScroll";
 import QuickLook from "@/components/home/QuickLook";
 import Team from "@/components/home/Team";
+import WhyRemote from "@/components/home/WhyRemote";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <HorizontalScroll/>
       <Team/>
       <QuickLook/>
+      <WhyRemote/>
     </div>
   );
 }
