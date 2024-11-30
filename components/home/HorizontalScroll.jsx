@@ -219,13 +219,15 @@ const Screen = ({ className, title, description, number, group }) => {
     return (
         <div className={cn("w-screen h-screen flex items-center justify-center", className)}>
             <div className='w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-20 pt-14 md:pt-20'>
-                <div className='grid md:grid-cols-2 place-items-center'>
+                <div className='grid md:grid-cols-2 place-items-center gap-10'>
                     <div className='lg:pr-40 space-y-10'>
                         <h1 className='w-full max-w-3xl text-3xl lg:text-4xl font-bold'> {title} </h1>
                         <p> {description} </p>
                         {number && number}
                     </div>
-                    {group && group}
+                    <div>
+                        {group && group}
+                    </div>
                 </div>
             </div>
         </div>
