@@ -119,6 +119,11 @@ const images = {
         blog_2: `/images/blog_page/blog_2.png`,
         blog_3: `/images/blog_page/blog_3.png`,
     },
+    career: {
+        career_1: `/icons/career/career_1.png`,
+        career_2: `/icons/career/career_2.png`,
+        career_3: `/icons/career/career_3.png`,
+    },
 };
 
 export default images;
