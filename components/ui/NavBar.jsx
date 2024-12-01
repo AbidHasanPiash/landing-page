@@ -4,8 +4,8 @@ import images from '@/configs/img.config';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import Button from '../common/Button';
 import Link from 'next/link';
-import { motion } from 'framer-motion'; // Importing framer-motion for animations
-import { HiOutlineMenu } from 'react-icons/hi';
+import { AnimatePresence, motion } from 'framer-motion'; // Importing framer-motion for animations
+import { HiChevronDown, HiOutlineMenu } from 'react-icons/hi';
 
 export default function NavBar() {
     const { isMobile, isTab, isDesktop } = useMediaQuery();
@@ -61,20 +61,7 @@ function DesktopNav({ menu }) {
                     transition={{ delay: index * 0.1 }} // Delay each item animation
                 >
                     {item.submenu ? (
-                        <div className="relative">
-                            <Link href={item.href || '#'} className="text-gray-800 hover:text-lime-500">
-                                {item.label}
-                            </Link>
-                            <ul className="absolute top-full left-0 bg-white shadow-lg p-4 space-y-2 hidden group-hover:block">
-                                {item.submenu.map((subItem, subIndex) => (
-                                    <li key={subIndex}>
-                                        <Link href={subItem.href} className="text-gray-800 hover:text-lime-500">
-                                            {subItem.label}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        <SubMenu item={item} />
                     ) : (
                         <Link href={item.href} className="text-gray-800 hover:text-lime-500">
                             {item.label}
@@ -93,6 +80,58 @@ function DesktopNav({ menu }) {
         </ul>
     );
 }
+
+
+function SubMenu({ item }) {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+        <div
+            className="relative"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            {/* Parent Menu Item */}
+            <Link
+                href={item.href || '#'}
+                className="text-gray-800 hover:text-lime-500 flex items-center space-x-2"
+            >
+                <span>{item.label}</span>
+                <motion.span
+                    className="transition-transform duration-100"
+                    animate={{ rotate: isHovered ? 180 : 0 }}
+                >
+                    <HiChevronDown />
+                </motion.span>
+            </Link>
+
+            {/* Submenu with Framer Motion Animation */}
+            <AnimatePresence>
+                {isHovered && (
+                    <motion.ul
+                        className="absolute top-full left-0 rounded-lg text-nowrap bg-white shadow-lg p-4 space-y-2"
+                        initial={{ opacity: 0, y: -10 }} // Start hidden with a slight upward position
+                        animate={{ opacity: 1, y: 0 }} // Fade in and slide down
+                        exit={{ opacity: 0, y: -10 }} // Fade out and slide up
+                        transition={{ duration: 0.3 }} // Smooth transition
+                    >
+                        {item.submenu.map((subItem, subIndex) => (
+                            <li key={subIndex}>
+                                <Link
+                                    href={subItem.href}
+                                    className="text-gray-800 hover:text-lime-500"
+                                >
+                                    {subItem.label}
+                                </Link>
+                            </li>
+                        ))}
+                    </motion.ul>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+}
+
 
 // Mobile Navigation Component
 function MobileNav({ menu }) {
@@ -138,14 +177,15 @@ function MobileNav({ menu }) {
                                     {item.submenu ? (
                                         <div>
                                             <button
-                                                className="w-full text-left font-semibold text-lg"
+                                                className="w-full text-left font-semibold text-lg flex items-center space-x-2"
                                                 onClick={() => toggleSubMenu(index)}
                                             >
-                                                {item.label}
+                                                <span>{item.label}</span>
+                                                <span><HiChevronDown /></span>
                                             </button>
                                             {/* Accordion for Submenu */}
                                             <motion.ul
-                                                className={`pl-4 mt-2 space-y-2 ${activeIndex === index ? 'block' : 'hidden'
+                                                className={`mt-2 space-y-2 ${activeIndex === index ? 'block' : 'hidden'
                                                     }`}
                                                 initial={{ height: 0 }}
                                                 animate={{ height: activeIndex === index ? 'auto' : 0 }}
@@ -155,7 +195,7 @@ function MobileNav({ menu }) {
                                                     <li key={subIndex}>
                                                         <Link
                                                             href={subItem.href || '#'}
-                                                            className=""
+                                                            onClick={() => setIsMenuOpen(false)}
                                                         >
                                                             {subItem.label}
                                                         </Link>
@@ -166,6 +206,7 @@ function MobileNav({ menu }) {
                                     ) : (
                                         <Link
                                             href={item.href || '#'}
+                                            onClick={() => setIsMenuOpen(false)}
                                             className="text-lg font-semibold hover:text-lime-300"
                                         >
                                             {item.label}
@@ -177,7 +218,7 @@ function MobileNav({ menu }) {
 
                         {/* Footer Button */}
                         <div className="mt-8">
-                            <Button className="px-6 py-3">Get started</Button>
+                            <Button className="px-6 py-3" onClick={() => setIsMenuOpen(false)}>Get started</Button>
                             <div className='mt-6 space-y-2'>
                                 <p className='font-semibold'>Build and Manage Global HR Operations</p>
                                 <p className='text-xs'>
