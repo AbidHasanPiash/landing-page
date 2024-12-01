@@ -34,9 +34,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${satisfy.variable} antialiased bg-background text-foreground`}>
-        {/* <NavBar/> */}
+        <NavBar/>
         {children}
-        {/* <Footer/> */}
+        <Footer/>
       </body>
     </html>
   );
