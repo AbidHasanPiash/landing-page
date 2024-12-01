@@ -97,6 +97,11 @@ const images = {
         logo: `/images/footer/logo.svg`,
         discord: `/images/footer/discord.webp`,
     },
+    client: {
+        client_1: `/images/client/client_1.svg`,
+        client_2: `/images/client/client_2.svg`,
+        client_3: `/images/client/client_3.svg`,
+    },
 };
 
 export default images;
