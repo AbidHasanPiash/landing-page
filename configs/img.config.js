@@ -102,6 +102,18 @@ const images = {
         client_2: `/images/client/client_2.svg`,
         client_3: `/images/client/client_3.svg`,
     },
+    about: {
+        clock: `/images/about/clock.png`,
+        team_1: `/images/about/team_1.png`,
+        team_2: `/images/about/team_2.png`,
+        team_3: `/images/about/team_3.png`,
+        team_4: `/images/about/team_4.png`,
+        team_5: `/images/about/team_5.png`,
+        team_6: `/images/about/team_6.png`,
+        team_7: `/images/about/team_7.png`,
+        team_8: `/images/about/team_8.png`,
+        team_map: `/images/about/team_map.png`,
+    },
 };
 
 export default images;

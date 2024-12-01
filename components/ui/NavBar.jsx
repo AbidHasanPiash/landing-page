@@ -109,7 +109,7 @@ function SubMenu({ item }) {
             <AnimatePresence>
                 {isHovered && (
                     <motion.ul
-                        className="absolute top-full left-0 rounded-lg text-nowrap bg-white shadow-lg p-4 space-y-2"
+                        className="absolute mt-2 top-full left-0 rounded-lg text-nowrap bg-white shadow-lg p-4 space-y-2"
                         initial={{ opacity: 0, y: -10 }} // Start hidden with a slight upward position
                         animate={{ opacity: 1, y: 0 }} // Fade in and slide down
                         exit={{ opacity: 0, y: -10 }} // Fade out and slide up
