@@ -114,6 +114,11 @@ const images = {
         team_8: `/images/about/team_8.png`,
         team_map: `/images/about/team_map.png`,
     },
+    blog_page: {
+        blog_1: `/images/blog_page/blog_1.png`,
+        blog_2: `/images/blog_page/blog_2.png`,
+        blog_3: `/images/blog_page/blog_3.png`,
+    },
 };
 
 export default images;
