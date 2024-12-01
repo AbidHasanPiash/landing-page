@@ -6,18 +6,18 @@ import dynamic from 'next/dynamic';
 // const Hero = dynamic(() => import('@/components/home/Hero'), { ssr: false });
 // const QuickLook = dynamic(() => import('@/components/home/QuickLook'), { ssr: false });
 // const Service = dynamic(() => import('@/components/home/Service'), { ssr: false });
-const Team = dynamic(() => import('@/components/home/Team'), { ssr: false });
+// const Team = dynamic(() => import('@/components/home/Team'), { ssr: false });
 // const Testimonials = dynamic(() => import('@/components/home/Testimonials'), { ssr: false });
-// const WhyRemote = dynamic(() => import('@/components/home/WhyRemote'), { ssr: false });
+const WhyRemote = dynamic(() => import('@/components/home/WhyRemote'), { ssr: false });
 
 import Blog from "@/components/home/Blog";
 import Brand from "@/components/home/Brand";
 import Hero from "@/components/home/Hero";
 import QuickLook from "@/components/home/QuickLook";
 import Service from "@/components/home/Service";
-// import Team from "@/components/home/Team";
+import Team from "@/components/home/Team";
 import Testimonials from "@/components/home/Testimonials";
-import WhyRemote from "@/components/home/WhyRemote";
+// import WhyRemote from "@/components/home/WhyRemote";
 
 export default function Home() {
   return (
