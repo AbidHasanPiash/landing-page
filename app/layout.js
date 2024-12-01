@@ -18,15 +18,15 @@ export const metadata = {
   openGraph: {
     title: `About Developer - ${appConfig.author.name}`,
     description: `Learn more about ${appConfig.author.name} and how we help manage global remote teams.`,
-    // url: appConfig.author.website,
-    // images: [
-    //   {
-    //     url: images.logo,
-    //     width: 1200,
-    //     height: 630,
-    //     alt: 'About page preview image',
-    //   },
-    // ],
+    url: appConfig.author.website,
+    images: [
+      {
+        url: images.logo,
+        width: 1200,
+        height: 630,
+        alt: 'About page preview image',
+      },
+    ],
   },
 };
 
