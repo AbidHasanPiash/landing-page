@@ -102,6 +102,28 @@ const images = {
         client_2: `/images/client/client_2.svg`,
         client_3: `/images/client/client_3.svg`,
     },
+    about: {
+        clock: `/images/about/clock.png`,
+        team_1: `/images/about/team_1.png`,
+        team_2: `/images/about/team_2.png`,
+        team_3: `/images/about/team_3.png`,
+        team_4: `/images/about/team_4.png`,
+        team_5: `/images/about/team_5.png`,
+        team_6: `/images/about/team_6.png`,
+        team_7: `/images/about/team_7.png`,
+        team_8: `/images/about/team_8.png`,
+        team_map: `/images/about/team_map.png`,
+    },
+    blog_page: {
+        blog_1: `/images/blog_page/blog_1.png`,
+        blog_2: `/images/blog_page/blog_2.png`,
+        blog_3: `/images/blog_page/blog_3.png`,
+    },
+    career: {
+        career_1: `/icons/career/career_1.png`,
+        career_2: `/icons/career/career_2.png`,
+        career_3: `/icons/career/career_3.png`,
+    },
 };
 
 export default images;
