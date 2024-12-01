@@ -5,6 +5,7 @@ import useMediaQuery from '@/hooks/useMediaQuery';
 import Button from '../common/Button';
 import Link from 'next/link';
 import { motion } from 'framer-motion'; // Importing framer-motion for animations
+import { HiOutlineMenu } from 'react-icons/hi';
 
 export default function NavBar() {
     const { isMobile, isTab, isDesktop } = useMediaQuery();
@@ -25,7 +26,6 @@ export default function NavBar() {
         { label: 'Career', href: '/career' },
     ];
 
-    // Track whether the component has mounted to handle client-side rendering
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -94,77 +94,101 @@ function DesktopNav({ menu }) {
     );
 }
 
-// Mobile Navigation Component with Framer Motion
+// Mobile Navigation Component
 function MobileNav({ menu }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(null); // Track active submenu
+
+    const toggleSubMenu = (index) => {
+        setActiveIndex(activeIndex === index ? null : index); // Toggle submenu visibility
+    };
 
     return (
         <div>
             <button
-                className="md:hidden text-gray-800"
+                className="self-end text-xl"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-                Menu
+                <HiOutlineMenu />
             </button>
             {isMenuOpen && (
                 <motion.div
-                    className="absolute top-0 left-0 right-0 w-full p-4 bg-accent shadow-lg"
-                    initial={{ opacity: 0, y: -200 }}
+                    className="fixed inset-0 z-50 bg-accent flex flex-col p-4 space-y-6"
+                    initial={{ opacity: 0, y: -100 }}
                     animate={{ opacity: 1, y: 0 }}
-                    // transition={{ type: 'spring', stiffness: 300 }}
+                    exit={{ opacity: 0, y: -100 }}
+                    transition={{ duration: 0.3 }}
                 >
-                    <div className="w-full h-full px-4 md:px-8 lg:px-20 flex items-center justify-between">
-                        {/* Main Logo */}
+                    <div className='flex items-center justify-between'>
                         <img src={images.footer.logo} alt="logo" className="h-8 md:h-10" />
-
+                        {/* Close Button */}
                         <button
-                            className="md:hidden text-gray-800"
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            className="self-end text-xl font-bold text-background"
+                            onClick={() => setIsMenuOpen(false)}
                         >
-                            close
+                            ✕
                         </button>
                     </div>
-                    <ul className="space-y-4 p-4 bg-background rounded-2xl mt-6">
-                        {menu.map((item, index) => (
-                            <motion.li
-                                key={index}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: index * 0.1 }}
-                            >
-                                {item.submenu ? (
-                                    <div>
-                                        <Link href={item.href || '#'} className="text-gray-800 hover:text-lime-500">
+
+                    <div className='bg-background rounded-3xl text-foreground p-6'>
+                        {/* Menu Items */}
+                        <ul>
+                            {menu.map((item, index) => (
+                                <li key={index} className='py-4 border-b border-primary'>
+                                    {item.submenu ? (
+                                        <div>
+                                            <button
+                                                className="w-full text-left font-semibold text-lg"
+                                                onClick={() => toggleSubMenu(index)}
+                                            >
+                                                {item.label}
+                                            </button>
+                                            {/* Accordion for Submenu */}
+                                            <motion.ul
+                                                className={`pl-4 mt-2 space-y-2 ${activeIndex === index ? 'block' : 'hidden'
+                                                    }`}
+                                                initial={{ height: 0 }}
+                                                animate={{ height: activeIndex === index ? 'auto' : 0 }}
+                                                transition={{ duration: 0.3 }}
+                                            >
+                                                {item.submenu.map((subItem, subIndex) => (
+                                                    <li key={subIndex}>
+                                                        <Link
+                                                            href={subItem.href || '#'}
+                                                            className=""
+                                                        >
+                                                            {subItem.label}
+                                                        </Link>
+                                                    </li>
+                                                ))}
+                                            </motion.ul>
+                                        </div>
+                                    ) : (
+                                        <Link
+                                            href={item.href || '#'}
+                                            className="text-lg font-semibold hover:text-lime-300"
+                                        >
                                             {item.label}
                                         </Link>
-                                        <ul className="space-y-2 pl-4">
-                                            {item.submenu.map((subItem, subIndex) => (
-                                                <li key={subIndex}>
-                                                    <Link href={subItem.href} className="text-gray-800 hover:text-lime-500">
-                                                        {subItem.label}
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                ) : (
-                                    <Link href={item.href} className="text-gray-800 hover:text-lime-500">
-                                        {item.label}
-                                    </Link>
-                                )}
-                            </motion.li>
-                        ))}
-                        <Button className="w-full py-3 mt-4">Contact</Button>
-                        <div className='mt-6 space-y-2'>
-                            <p className='font-semibold'>Build and Manage Global HR Operations</p>
-                            <p className='text-xs'>
-                                Remote Office is an end-to-end remoteOps platform that helps you build 
-                                and manage global remote teams. We provide you with access to top-vetted 
-                                talents, handle compliance and HR issues, and offer strategic consultation 
-                                and support to optimise your team's performance and productivity.
-                            </p>
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+
+                        {/* Footer Button */}
+                        <div className="mt-8">
+                            <Button className="px-6 py-3">Get started</Button>
+                            <div className='mt-6 space-y-2'>
+                                <p className='font-semibold'>Build and Manage Global HR Operations</p>
+                                <p className='text-xs'>
+                                    Remote Office is an end-to-end remoteOps platform that helps you build
+                                    and manage global remote teams. We provide you with access to top-vetted
+                                    talents, handle compliance and HR issues, and offer strategic consultation
+                                    and support to optimise your team's performance and productivity.
+                                </p>
+                            </div>
                         </div>
-                    </ul>
+                    </div>
                 </motion.div>
             )}
         </div>
