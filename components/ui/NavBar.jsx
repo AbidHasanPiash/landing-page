@@ -15,10 +15,10 @@ export default function NavBar() {
         { label: 'Home', href: '/' },
         {
             label: 'Teams', submenu: [
-                { label: 'Technology', href: '/team/technology' },
-                { label: 'Marketing', href: '/team/marketing' },
-                { label: 'Creative Studio', href: '/team/creative-studio' },
-                { label: 'CX/Customer Support', href: '/team/back-office' }
+                { label: 'Technology', href: '#' },
+                { label: 'Marketing', href: '#' },
+                { label: 'Creative Studio', href: '#' },
+                { label: 'CX/Customer Support', href: '#' }
             ]
         },
         { label: 'About', href: '/about' },
