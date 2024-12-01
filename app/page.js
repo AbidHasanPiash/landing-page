@@ -12,13 +12,13 @@ export default function Home() {
   return (
     <div>
       <Hero/>
-      <Brand/>
-      <Blog/>
-      <Service/>
-      <Team/>
-      <QuickLook/>
-      <WhyRemote/>
-      <Testimonials/>
+      {/* <Brand/> */}
+      {/* <Blog/> */}
+      {/* <Service/> */}
+      {/* <Team/> */}
+      {/* <QuickLook/> */}
+      {/* <WhyRemote/> */}
+      {/* <Testimonials/> */}
     </div>
   );
 }
